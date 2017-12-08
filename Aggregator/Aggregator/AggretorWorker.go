@@ -13,6 +13,7 @@ import (
 	"bufio"
 	"io"
 	"fmt"
+	"crypto/md5"
 )
 
 type AggregatorWorker struct {
@@ -111,10 +112,15 @@ func (w *AggregatorWorker) aggregateCSVFiles(files <-chan FileType, fileNumber i
 				break
 			}
 			// make sure the line doesn't exists unless its the first line which is the header
-			if !CheckProcessedLinesExists(line) || newCSVFile.Len() == 0 {
+
+			h := md5.New()
+			io.WriteString(h,line)
+			lineHash := string(h.Sum(nil))
+
+			if !CheckProcessedLinesExists(lineHash) || newCSVFile.Len() == 0 {
 				newCSVFile.WriteString(line)
 				currentSize += int64(len(line))
-				AppendProcessedLines(line)
+				AppendProcessedLines(lineHash)
 			}
 		}
 		f.Close()     //close the open file
