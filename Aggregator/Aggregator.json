@@ -1,0 +1,13 @@
+{
+  "files_location": "#wd/ProcessingData",
+  "max_workers": 10,
+  "max_aggregated_file_size": 1024,
+  "save_files_to_disk":false,
+  "local_folder_location":"output",
+  "gzip_avg_header_size":40,
+  "truncate_every_run":true,
+  "db_configuration": {
+    "driver": "mysql",
+    "connection_string":""
+  }
+}
