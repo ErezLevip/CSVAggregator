@@ -1,5 +1,5 @@
 # CSV Files Aggregator
-The CSV Files Aggregator accept a large amount of small CSV Files inside Gzips and aggregates them into a larger file for future processing.
+The CSV Files Aggregator accept a large amount of small CSV Files packed in Gzips and aggregates them into a larger file packed in gzip for future processing.
 
 The Service is configured through Aggregator.js
 ```
