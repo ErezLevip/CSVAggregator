@@ -26,6 +26,6 @@ Insert your connection string in the configuration file and you are ready to go.
 
 To start using the service with docker:
 ```
-Run "docker build - docker build -t aggregator ."
-3. Run the docker image - "docker run aggregator"
+Run "docker build - docker build -t aggregator"
+Run the docker image - "docker run aggregator"
 ```
